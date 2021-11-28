@@ -39,7 +39,6 @@ contract HomeFiContract is ChainlinkClient {
         uint256 _percent,
         uint256 _price
     ) public {
-        // setPublicChainlinkToken();
         // Set contract properties.
         owner = msg.sender;
         title = _title;
@@ -76,23 +75,36 @@ contract HomeFiContract is ChainlinkClient {
     /**
      * https://docs.chain.link/docs/advanced-tutorial/
      */
-    function requestPropertyData(string memory name, string memory field)
+    function requestPropertyData(string memory field)
         public
         returns (bytes32 requestId)
     {
+        setPublicChainlinkToken();
         Chainlink.Request memory request = buildChainlinkRequest(
             jobId,
             address(this),
             this.fulfill.selector
         );
         string memory requestUrl = string(
-            abi.encodePacked("https://geocode.xyz/", name, "?json=1")
+            abi.encodePacked("https://geocode.xyz/", this.getTitle(), "?json=1")
         );
         request.add("get", requestUrl);
         request.add("path", field);
 
         // Sends the request
         return sendChainlinkRequestTo(oracle, request, fee);
+    }
+
+    function bytes32ToString(bytes32 _bytes32) public pure returns (string memory) {
+        uint8 i = 0;
+        while(i < 32 && _bytes32[i] != 0) {
+            i++;
+        }
+        bytes memory bytesArray = new bytes(i);
+        for (i = 0; i < 32 && _bytes32[i] != 0; i++) {
+            bytesArray[i] = _bytes32[i];
+        }
+        return string(bytesArray);
     }
 
     function fulfill(bytes32 _requestId, bytes32 _value)

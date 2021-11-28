@@ -9,9 +9,18 @@ export const Listify = ({ obj }) => {
         if (!v) {
           return;
         }
+        const value = (JSON.stringify(v) || "").replaceAll('"', "");
+
         return (
           <li key={i}>
-            {capitalize(k)}: {(JSON.stringify(v) || "").replaceAll('"', "")}
+            {capitalize(k)}:{" "}
+            {value.indexOf("http") !== -1 ? (
+              <a target="_blank" href={value}>
+                {value}
+              </a>
+            ) : (
+              <span>{value}</span>
+            )}
           </li>
         );
       })}

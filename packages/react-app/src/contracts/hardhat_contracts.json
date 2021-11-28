@@ -5,7 +5,7 @@
       "chainId": "31337",
       "contracts": {
         "HomeFiContract": {
-          "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+          "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
           "abi": [
             {
               "inputs": [
@@ -78,6 +78,25 @@
               "type": "event"
             },
             {
+              "inputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "_bytes32",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "bytes32ToString",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "pure",
+              "type": "function"
+            },
+            {
               "inputs": [],
               "name": "estimate",
               "outputs": [
@@ -98,9 +117,9 @@
                   "type": "bytes32"
                 },
                 {
-                  "internalType": "bytes32",
+                  "internalType": "string",
                   "name": "_value",
-                  "type": "bytes32"
+                  "type": "string"
                 }
               ],
               "name": "fulfill",
@@ -261,11 +280,6 @@
             },
             {
               "inputs": [
-                {
-                  "internalType": "string",
-                  "name": "name",
-                  "type": "string"
-                },
                 {
                   "internalType": "string",
                   "name": "field",

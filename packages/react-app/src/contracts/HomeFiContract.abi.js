@@ -70,6 +70,25 @@ module.exports = [
     "type": "event"
   },
   {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_bytes32",
+        "type": "bytes32"
+      }
+    ],
+    "name": "bytes32ToString",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "estimate",
     "outputs": [
@@ -90,9 +109,9 @@ module.exports = [
         "type": "bytes32"
       },
       {
-        "internalType": "bytes32",
+        "internalType": "string",
         "name": "_value",
-        "type": "bytes32"
+        "type": "string"
       }
     ],
     "name": "fulfill",
@@ -253,11 +272,6 @@ module.exports = [
   },
   {
     "inputs": [
-      {
-        "internalType": "string",
-        "name": "name",
-        "type": "string"
-      },
       {
         "internalType": "string",
         "name": "field",

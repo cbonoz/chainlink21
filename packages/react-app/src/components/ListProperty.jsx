@@ -44,7 +44,7 @@ function ListProperty({ readContracts, isLoggedIn, signer, provider, address, bl
   const [files, setFiles] = useState([]);
   const [info, setInfo] = useState({
     title: testAddress,
-    description: `${testAddress}. Own 1% of this property`,
+    description: `Own 1% of this property`,
     percent: 10,
     limit: 10,
     eth: 1.0, // effective default is 1 eth for 1% ~4k, ~400k net valuation.
@@ -138,12 +138,12 @@ function ListProperty({ readContracts, isLoggedIn, signer, provider, address, bl
         // Save property after contract deploy (if applicable).
         await saveProperty(d);
         console.log("created contract", contract);
-        d["contract"] = `${TARGET_NETWORK.blockExplorer}${contract.contractAddress}`;
-        d["contractTx"] = `${TARGET_NETWORK.blockExplorer}${contract.transactionHash}`;
+        d["contract"] = `${TARGET_NETWORK.blockExplorer}address/${contract.address}`;
+        d["contractTx"] = `${TARGET_NETWORK.blockExplorer}tx/${contract.deployTransaction?.hash}`;
 
         // d["contract"] = contract;
       } catch (e) {
-        alert("Error saving property: " + e.toString());
+        alert("Error saving property: " + JSON.stringify(e));
         console.error("error saving property", e);
         return;
       } finally {
@@ -269,7 +269,7 @@ function ListProperty({ readContracts, isLoggedIn, signer, provider, address, bl
         <div className="sell-area">{getBody()}</div>
       </Content>
       <Footer>
-        {currentStep > 0 && currentStep !== LAST_STEP && !isLoggedIn && (
+        {currentStep > 0 && currentStep <= LAST_STEP && (
           <Button disabled={loading} type="primary" onClick={() => updateStep(-1)}>
             Previous
           </Button>
