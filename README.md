@@ -1,5 +1,5 @@
 <p align='center'>
-    <img src="./img/logo_3_2.png" />
+    <img src="./img/logo_3_2.png" width=400/>
 </p>
 <br/>
 
@@ -141,4 +141,3 @@ Create a limited partnership (LP), issue a token on whatever blockchain you want
 ### Useful links
 
 - https://chainlink-fall-hackathon-2021.devpost.com/ --
-
