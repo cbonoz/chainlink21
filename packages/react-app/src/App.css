@@ -1,0 +1,185 @@
+.App {
+  text-align: center;
+}
+
+.ant-layout,
+.ant-layout-sider,
+.ant-layout-header {
+  background: white !important;
+}
+
+.home-button-section {
+  margin: 50px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.ant-input,
+.ant-input-affix-wrapper {
+  max-width: 400px;
+}
+.percent-form {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.history-area pre {
+  height: 400px !important;
+  overflow: scroll;
+}
+
+.ant-collapse-content-box p {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.risk-page {
+  padding: 20px;
+}
+
+.logo-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.home-logo {
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.app-container {
+  /* margin-top: 60px; */
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.header-text {
+  font-weight: bold;
+}
+
+.first-token {
+  margin-bottom: 20px;
+}
+
+.float-right {
+  float: right;
+}
+
+.trade-heading {
+  font-size: 16px;
+  font-weight: 500;
+  clear: both;
+}
+.header-image {
+  height: 30px;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+.sell-area {
+  padding: 20px;
+  /* border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray; */
+  min-height: 60vh;
+}
+
+.instruction-area {
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.header-icon {
+  width: 100px;
+  margin: 25px;
+}
+
+.sig-canvas {
+  border: 1px dotted black;
+  /* margin: 20px; */
+  /* width: 400px; */
+}
+
+.sig-canvas {
+  width: 470px;
+}
+
+.sig-canvas p {
+  margin-left: 10px;
+}
+
+.sell-header {
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.hero-logo {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.header-steps {
+  height: 300px;
+  padding-top: 100px;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.card-image,
+.ant-card {
+  width: 300px !important;
+}
+
+.ant-card {
+  display: inline-grid;
+}
+
+.dropzone {
+  border: 1px dotted lightgray;
+  padding-top: 20px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.ant-input {
+  max-width: 400px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.ant-input-group-wrapper {
+  margin: 10px;
+}
+
+.ant-layout-header {
+  background: white !important;
+}
+
+.ant-btn,
+.ant-btn-circle {
+  /* padding: 10px 20px 10px 20px !important; */
+  margin: 10px;
+}
+
+.nav-logo {
+  height: 25px;
+}
