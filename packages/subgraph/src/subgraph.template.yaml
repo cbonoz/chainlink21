@@ -3,11 +3,11 @@ schema:
   file: ./src/schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: HomeChainContract
+    name: HomeFiContract
     network: localhost
     source:
-      address: "{{localhost_HomeChainContractAddress}}"
-      abi: HomeChainContract
+      address: "{{localhost_HomeFiContractAddress}}"
+      abi: HomeFiContract
       startBlock: 1
     mapping:
       kind: ethereum/events
@@ -17,8 +17,8 @@ dataSources:
         - Purpose
         - Sender
       abis:
-        - name: HomeChainContract
-          file: ./abis/localhost_HomeChainContract.json
+        - name: HomeFiContract
+          file: ./abis/localhost_HomeFiContract.json
       eventHandlers:
         - event: SetPurpose(address,string)
           handler: handleSetPurpose

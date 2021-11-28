@@ -13,7 +13,7 @@ import { DEFAULT_HOME_ICON } from "../constants";
 import { createNftFromFileData } from "../util/nftport";
 import { Listify } from "../util/listify";
 import { saveProperty } from "../util/moral";
-import { deployContract } from "../util/homechain";
+import { deployContract } from "../util/HomeFi";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -46,7 +46,6 @@ function ListProperty({ isLoggedIn, signer, provider, address, blockExplorer }) 
     limit: 10,
     eth: 1.0, // effective default is 1 eth for 1% ~4k, ~400k net valuation.
     owner: address,
-    collectibleOnly: true,
     imgUrl: "",
   });
   const [result, setResult] = useState({});
@@ -132,14 +131,12 @@ function ListProperty({ isLoggedIn, signer, provider, address, blockExplorer }) 
       }
 
       try {
-        if (!d.collectibleOnly) {
           // Deploy as interactable smart contract.
           try {
             const contract = await deployContract(d);
           } catch (e) {
             console.error("error deploying contract", e);
           }
-        }
         // Save property after contract deploy (if applicable).
         await saveProperty(d);
         d["contract"] = contract;
@@ -198,14 +195,6 @@ function ListProperty({ isLoggedIn, signer, provider, address, blockExplorer }) 
 
             <Input addonBefore={"Address"} disabled placeholder="Payment Address: " value={address} />
             <div className="percent-form">
-              <Checkbox
-                checked={info.collectibleOnly}
-                onChange={e => updateInfo({ collectibleOnly: e.target.checked })}
-              >
-                Collectible only
-              </Checkbox>
-
-              {!info.collectibleOnly && (
                 <div>
                   <br />
                   <p className="float-left clear">
@@ -230,7 +219,6 @@ function ListProperty({ isLoggedIn, signer, provider, address, blockExplorer }) 
                     onChange={e => updateInfo({ eth: e.target.value })}
                   />
                 </div>
-              )}
             </div>
           </div>
         );

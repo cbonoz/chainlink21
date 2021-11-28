@@ -53,7 +53,7 @@ docker run \
   -ti node:16
 ```
 
-🔏 Edit your smart contract `HomeChainContract.sol` in `packages/hardhat/contracts`
+🔏 Edit your smart contract `HomeFiContract.sol` in `packages/hardhat/contracts`
 
 📝 Edit your frontend `App.jsx` in `packages/react-app/src`
 

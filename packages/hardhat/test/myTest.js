@@ -12,13 +12,11 @@ describe("My Dapp", function () {
     setTimeout(done, 2000);
   });
 
-  describe("HomeChainContract", function () {
-    it("Should deploy HomeChainContract", async function () {
-      const HomeChainContract = await ethers.getContractFactory(
-        "HomeChainContract"
-      );
+  describe("HomeFiContract", function () {
+    it("Should deploy HomeFiContract", async function () {
+      const HomeFiContract = await ethers.getContractFactory("HomeFiContract");
 
-      myContract = await HomeChainContract.deploy();
+      myContract = await HomeFiContract.deploy();
     });
 
     describe("setPurpose()", function () {

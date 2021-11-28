@@ -1,8 +1,8 @@
 import { BigInt, Address } from "@graphprotocol/graph-ts";
 import {
-  HomeChainContract,
+  HomeFiContract,
   SetPurpose,
-} from "../generated/HomeChainContract/HomeChainContract";
+} from "../generated/HomeFiContract/HomeFiContract";
 import { Purpose, Sender } from "../generated/schema";
 
 export function handleSetPurpose(event: SetPurpose): void {

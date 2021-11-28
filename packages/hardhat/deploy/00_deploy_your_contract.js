@@ -5,7 +5,7 @@
 module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy } = deployments;
   const { deployer } = await getNamedAccounts();
-  await deploy("HomeChainContract", {
+  await deploy("HomeFiContract", {
     // Learn more about args here: https://www.npmjs.com/package/hardhat-deploy#deploymentsdeploy
     from: deployer,
     args: [
@@ -20,14 +20,14 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
   /*
     // Getting a previously deployed contract
-    const HomeChainContract = await ethers.getContract("HomeChainContract", deployer);
-    await HomeChainContract.setPurpose("Hello");
+    const HomeFiContract = await ethers.getContract("HomeFiContract", deployer);
+    await HomeFiContract.setPurpose("Hello");
   
-    To take ownership of HomeChainContract using the ownable library uncomment next line and add the 
+    To take ownership of HomeFiContract using the ownable library uncomment next line and add the 
     address you want to be the owner. 
-    // HomeChainContract.transferOwnership(YOUR_ADDRESS_HERE);
+    // HomeFiContract.transferOwnership(YOUR_ADDRESS_HERE);
 
-    //const HomeChainContract = await ethers.getContractAt('HomeChainContract', "0xaAC799eC2d00C013f1F11c37E654e59B0429DF6A") //<-- if you want to instantiate a version of a contract at a specific address!
+    //const HomeFiContract = await ethers.getContractAt('HomeFiContract', "0xaAC799eC2d00C013f1F11c37E654e59B0429DF6A") //<-- if you want to instantiate a version of a contract at a specific address!
   */
 
   /*
@@ -41,7 +41,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
   /*
   //If you want to send some ETH to a contract on deploy (make your constructor payable!)
-  const HomeChainContract = await deploy("HomeChainContract", [], {
+  const HomeFiContract = await deploy("HomeFiContract", [], {
   value: ethers.utils.parseEther("0.05")
   });
   */
@@ -49,9 +49,9 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   /*
   //If you want to link a library into your contract:
   // reference: https://github.com/austintgriffith/scaffold-eth/blob/using-libraries-example/packages/hardhat/scripts/deploy.js#L19
-  const HomeChainContract = await deploy("HomeChainContract", [], {}, {
+  const HomeFiContract = await deploy("HomeFiContract", [], {}, {
    LibraryName: **LibraryAddress**
   });
   */
 };
-module.exports.tags = ["HomeChainContract"];
+module.exports.tags = ["HomeFiContract"];

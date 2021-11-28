@@ -243,7 +243,7 @@ function App(props) {
   ]);
 
   // keep track of a variable from the contract in the local React state:
-  const purpose = useContractReader(readContracts, "HomeChainContract", "purpose");
+  const purpose = useContractReader(readContracts, "HomeFiContract", "purpose");
 
   /*
   const addressFromENS = useResolveName(mainnetProvider, "austingriffith.eth");

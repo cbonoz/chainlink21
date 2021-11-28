@@ -11,7 +11,7 @@ Tap into the equity of your home using chainlink and NFT's.
 
 HomeFi enables users to fundraise using NFT's around properties they own.
 
-Users can create the terms of the NFT and allow others to deposit to it. Proof of ownership,such as a title or deed, is uploaded on HomeFi during the listing process. The app then collects the user's signature and uploads it as an image file to the IPFS folder for the property.
+Users can create the terms of the NFT and allow others to deposit to it. Proof of ownership, such as a title or deed, is uploaded on HomeFi during the listing process. The app then collects the user's signature and uploads it as an image file to the IPFS folder for the property.
 After upload, prospective buyers/participants (up to the limit specified by the issuer) can discover previously-created listings and purchase units of ownership using attachment to the NFT metadata source of truth.
 
 Each property gets deployed as its own smart contract. With the price/appraised value of the property fixed to the contract.

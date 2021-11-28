@@ -11,7 +11,7 @@ import { Address } from "../components";
 
   <Events
     contracts={readContracts}
-    contractName="HomeChainContract"
+    contractName="HomeFiContract"
     eventName="SetPurpose"
     localProvider={localProvider}
     mainnetProvider={mainnetProvider}

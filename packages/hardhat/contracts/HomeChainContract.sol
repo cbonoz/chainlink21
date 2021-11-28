@@ -6,7 +6,7 @@ import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
 
 //import "@openzeppelin/contracts/access/Ownable.sol"; //https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
 
-contract HomeChainContract is ChainlinkClient {
+contract HomeFiContract is ChainlinkClient {
   using Chainlink for Chainlink.Request;
 
 
