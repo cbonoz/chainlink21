@@ -13,7 +13,7 @@ import { DEFAULT_HOME_ICON } from "../constants";
 import { createNftFromFileData } from "../util/nftport";
 import { Listify } from "../util/listify";
 import { saveProperty } from "../util/moral";
-import { deployContract } from "../util/HomeFi";
+import { deployContract } from "../util/homefi";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -131,12 +131,12 @@ function ListProperty({ isLoggedIn, signer, provider, address, blockExplorer }) 
       }
 
       try {
-          // Deploy as interactable smart contract.
-          try {
-            const contract = await deployContract(d);
-          } catch (e) {
-            console.error("error deploying contract", e);
-          }
+        // Deploy as interactable smart contract.
+        try {
+          const contract = await deployContract(d);
+        } catch (e) {
+          console.error("error deploying contract", e);
+        }
         // Save property after contract deploy (if applicable).
         await saveProperty(d);
         d["contract"] = contract;
@@ -195,30 +195,30 @@ function ListProperty({ isLoggedIn, signer, provider, address, blockExplorer }) 
 
             <Input addonBefore={"Address"} disabled placeholder="Payment Address: " value={address} />
             <div className="percent-form">
-                <div>
+              <div>
+                <br />
+                <p className="float-left clear">
+                  Enter percent of property (up to 10%) for sale: <br />
                   <br />
-                  <p className="float-left clear">
-                    Enter percent of property (up to 10%) for sale: <br />
-                    <br />
-                    <IntegerStep val={info.percent} onChange={percent => updateInfo({ percent })} />
-                  </p>
+                  <IntegerStep val={info.percent} onChange={percent => updateInfo({ percent })} />
+                </p>
 
-                  <Input
-                    addonBefore={"Number purchase-able"}
-                    placeholder="Enter max possible participants"
-                    value={info.limit}
-                    type="number"
-                    onChange={e => updateInfo({ limit: e.target.value })}
-                  />
+                <Input
+                  addonBefore={"Number purchase-able"}
+                  placeholder="Enter max possible participants"
+                  value={info.limit}
+                  type="number"
+                  onChange={e => updateInfo({ limit: e.target.value })}
+                />
 
-                  <Input
-                    addonBefore={"Enter price (Eth)"}
-                    placeholder="Enter eth price per participant"
-                    value={info.eth}
-                    suffix={"ETH"}
-                    onChange={e => updateInfo({ eth: e.target.value })}
-                  />
-                </div>
+                <Input
+                  addonBefore={"Enter price (Eth)"}
+                  placeholder="Enter eth price per participant"
+                  value={info.eth}
+                  suffix={"ETH"}
+                  onChange={e => updateInfo({ eth: e.target.value })}
+                />
+              </div>
             </div>
           </div>
         );
