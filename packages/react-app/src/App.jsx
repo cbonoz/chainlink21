@@ -22,7 +22,16 @@ import { Account, Header, Ramp, ThemeSwitch } from "./components";
 import Discover from "./components/Discover";
 import Home from "./components/Home";
 import ListProperty from "./components/ListProperty";
-import { INFURA_ID, NETWORK, ALCHEMY_KEY, TARGET_NETWORK, MORALIS_SERVER, MORALIS_ID } from "./constants";
+import {
+  INFURA_ID,
+  NETWORK,
+  ALCHEMY_KEY,
+  TARGET_NETWORK,
+  MORALIS_SERVER,
+  MORALIS_ID,
+  RINKEBY_CHAIN_ID,
+  NETWORKS,
+} from "./constants";
 import externalContracts from "./contracts/external_contracts";
 // contracts
 import deployedContracts from "./contracts/hardhat_contracts.json";
@@ -219,10 +228,14 @@ function App(props) {
 
   // const contractConfig = useContractConfig();
 
-  const contractConfig = { deployedContracts: deployedContracts || {}, externalContracts: externalContracts || {} };
+  const contractConfig = {
+    deployedContracts: deployedContracts || {},
+    externalContracts: externalContracts || {},
+    // chainId: NETWORKS.localhost.chainId,
+  };
 
   // Load in your local 📝 contract and read a value from it:
-  const readContracts = useContractLoader(localProvider, contractConfig);
+  const readContracts = useContractLoader(localProvider, contractConfig); //, contractConfig.chainId);
 
   // If you want to make 🔐 write transactions to your contracts, use the userSigner:
   const writeContracts = useContractLoader(userSigner, contractConfig, localChainId);
@@ -243,7 +256,8 @@ function App(props) {
   ]);
 
   // keep track of a variable from the contract in the local React state:
-  const purpose = useContractReader(readContracts, "HomeFiContract", "purpose");
+  // const purpose = useContractReader(readContracts, "HomeFiContract", "purpose");
+  // console.log("hfi", writeContracts, contractConfig);
 
   /*
   const addressFromENS = useResolveName(mainnetProvider, "austingriffith.eth");
@@ -379,7 +393,8 @@ function App(props) {
       currentUser = await Moralis.authenticate({ signingMessage: "Log in using Moralis" });
       setUser(currentUser);
       setAddress(currentUser.get("ethAddress"));
-      setInjectedProvider(await Moralis.enableWeb3());
+      const p = await Moralis.enableWeb3();
+      setInjectedProvider(p);
     }
   };
 
@@ -514,9 +529,11 @@ function App(props) {
 
         <Switch>
           <div className="app-container">
-            <Route exact path={["/", "/setup", "/about"]}>
-              <Home login={loadWeb3Modal} loggedIn={loggedIn} />
-            </Route>
+            <Route
+              exact
+              path={["/", "/setup", "/about"]}
+              render={props => <Home {...props} login={loadWeb3Modal} loggedIn={loggedIn} />}
+            />
             <Route path={["/search"]} render={props => <Discover {...props} setProperty={setProperty} />} />
             <Route
               path={"/property/:propertyId"}
@@ -526,9 +543,10 @@ function App(props) {
             />
             <Route path={["/list-property"]}>
               <ListProperty
+                readContracts={readContracts}
                 isLoggedIn={loggedIn}
                 signer={userProviderAndSigner}
-                provider={userProviderAndSigner}
+                provider={injectedProvider}
                 address={address}
                 blockExplorer={blockExplorer}
               />

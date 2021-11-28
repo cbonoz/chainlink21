@@ -5,7 +5,7 @@
       "chainId": "31337",
       "contracts": {
         "HomeFiContract": {
-          "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+          "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
           "abi": [
             {
               "inputs": [
@@ -82,9 +82,9 @@
               "name": "estimate",
               "outputs": [
                 {
-                  "internalType": "uint256",
+                  "internalType": "bytes32",
                   "name": "",
-                  "type": "uint256"
+                  "type": "bytes32"
                 }
               ],
               "stateMutability": "view",
@@ -98,14 +98,92 @@
                   "type": "bytes32"
                 },
                 {
-                  "internalType": "uint256",
-                  "name": "_estimate",
-                  "type": "uint256"
+                  "internalType": "bytes32",
+                  "name": "_value",
+                  "type": "bytes32"
                 }
               ],
               "name": "fulfill",
               "outputs": [],
               "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "getLastData",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "getOwner",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "getPercent",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "getPrice",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "getTitle",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "lastData",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "view",
               "type": "function"
             },
             {
@@ -135,8 +213,19 @@
               "type": "function"
             },
             {
-              "inputs": [],
-              "name": "requestEstimateData",
+              "inputs": [
+                {
+                  "internalType": "string",
+                  "name": "name",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "field",
+                  "type": "string"
+                }
+              ],
+              "name": "requestGeocode",
               "outputs": [
                 {
                   "internalType": "bytes32",

@@ -12,7 +12,7 @@ export default function Header() {
     </span>
   );
   return (
-    <a href="https://github.com/cbonoz/webjam21" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/cbonoz/chainlink21" target="_blank" rel="noopener noreferrer">
       <PageHeader title={title} subTitle={APP_DESC} style={{ cursor: "pointer" }} />
     </a>
   );

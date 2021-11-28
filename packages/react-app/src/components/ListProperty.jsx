@@ -9,11 +9,12 @@ import ReactSignatureCanvas from "react-signature-canvas";
 import IntegerStep from "./IntegerStep";
 import { makeListingFiles, storeFiles } from "../util/stor";
 import { createStream, initCeramic } from "../util/ceramic";
-import { DEFAULT_HOME_ICON } from "../constants";
+import { DEFAULT_HOME_ICON, TARGET_NETWORK } from "../constants";
 import { createNftFromFileData } from "../util/nftport";
 import { Listify } from "../util/listify";
 import { saveProperty } from "../util/moral";
 import { deployContract } from "../util/homefi";
+import { useContractLoader } from "eth-hooks";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -25,8 +26,11 @@ const testAddress = createFullAddress();
 
 const UPLOAD_FILES = false;
 
-function ListProperty({ isLoggedIn, signer, provider, address, blockExplorer }) {
+function ListProperty({ readContracts, isLoggedIn, signer, provider, address, blockExplorer }) {
   const [currentStep, setCurrentStep] = useState(0);
+  console.log("p", provider.currentProvider, readContracts);
+  // const contracts = useContractLoader(provider.currentProvider);
+
   const sigRef = useRef();
 
   useEffect(() => {
@@ -131,16 +135,16 @@ function ListProperty({ isLoggedIn, signer, provider, address, blockExplorer }) 
       }
 
       try {
-        // Deploy as interactable smart contract.
-        try {
-          const contract = await deployContract(d);
-        } catch (e) {
-          console.error("error deploying contract", e);
-        }
+        const contract = await deployContract("HomeFiContract", d);
         // Save property after contract deploy (if applicable).
         await saveProperty(d);
-        d["contract"] = contract;
+        console.log("created contract", contract);
+        d["contract"] = `${TARGET_NETWORK.blockExplorer}${contract.contractAddress}`;
+        d["contractTx"] = `${TARGET_NETWORK.blockExplorer}${contract.transactionHash}`;
+
+        // d["contract"] = contract;
       } catch (e) {
+        alert("Error saving property: " + e.toString());
         console.error("error saving property", e);
         return;
       } finally {
@@ -200,7 +204,7 @@ function ListProperty({ isLoggedIn, signer, provider, address, blockExplorer }) 
                 <p className="float-left clear">
                   Enter percent of property (up to 10%) for sale: <br />
                   <br />
-                  <IntegerStep val={info.percent} onChange={percent => updateInfo({ percent })} />
+                  <IntegerStep val={info.percent} setVal={percent => updateInfo({ percent })} />
                 </p>
 
                 <Input

@@ -22,6 +22,7 @@ contract HomeFiContract is ChainlinkClient {
   uint256 private fee;
 
   bytes32 public estimate;
+  string public lastData;
 
   uint numberParticipants;
 
@@ -43,7 +44,11 @@ contract HomeFiContract is ChainlinkClient {
       percent = _percent;
       numberParticipants = 0;
 
-      requestGeocode(_title);
+      // Chainlink rinkeby devrel node.
+      oracle = 0xc57B33452b4F7BB189bB5AfaE9cc4aBa1f7a4FD8;
+      jobId = "6b88e0402e5d415eb946e528b8e0c7ba";
+      fee = 0.1 * 10 ** 18; // (Varies by network and job) .1 Link
+      // requestGeocode(_title);
   }
 
   function purchaseStake() public payable {
@@ -63,7 +68,8 @@ contract HomeFiContract is ChainlinkClient {
     function requestGeocode(string memory name, string memory field) public returns (bytes32 requestId) 
     {
         Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
-        request.add("get", "https://geocode.xyz/test?json=1");
+        string memory requestUrl = string(abi.encodePacked("https://geocode.xyz/", name, "?json=1"));
+        request.add("get", requestUrl);
         request.add("path", field);
         
         // Sends the request
@@ -72,6 +78,29 @@ contract HomeFiContract is ChainlinkClient {
     
     function fulfill(bytes32 _requestId, bytes32 _value) public recordChainlinkFulfillment(_requestId)
     {
-        estimate = _value;
+        lastData = string(abi.encodePacked(_value));
     }
+
+  // Views functions.
+
+  function getTitle() public view returns (string memory) {
+      return title;
+  }
+
+  function getOwner() public view returns (address) {
+      return owner;
+  }
+
+  function getPercent() public view returns (uint) {
+      return percent;
+  }
+
+  function getPrice() public view returns (uint) {
+      return price;
+  }
+
+  function getLastData() public view returns (string memory) {
+      return lastData;
+  }
+
 }

@@ -7,7 +7,8 @@ import logo from "../assets/logo.png";
 
 const { Step } = Steps;
 
-function Home({ login, loggedIn }) {
+function Home({ login, loggedIn, history }) {
+  const onStart = loggedIn ? () => history.push("/list-property") : login;
   return (
     <div>
       <div className="logo-section">
@@ -20,13 +21,11 @@ function Home({ login, loggedIn }) {
         <Step title="Fundraise or create limited collectibles." />
       </Steps>
 
-      {!loggedIn && (
-        <div className="home-button-section">
-          <Button type="primary" size="large" onClick={login}>
-            Get started
-          </Button>
-        </div>
-      )}
+      <div className="home-button-section">
+        <Button type="primary" size="large" onClick={onStart}>
+          {loggedIn ? "Create listing" : "Get started"}
+        </Button>
+      </div>
     </div>
   );
 }

@@ -53,7 +53,7 @@ export default function Account({
   blockExplorer,
 }) {
   const modalButtons = [];
-  if (web3Modal || user) {
+  if (web3Modal || loggedIn) {
     if (loggedIn) {
       modalButtons.push(
         <Button
