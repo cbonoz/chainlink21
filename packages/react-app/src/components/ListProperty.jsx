@@ -14,7 +14,6 @@ import { createNftFromFileData } from "../util/nftport";
 import { Listify } from "../util/listify";
 import { saveProperty } from "../util/moral";
 import { deployContract } from "../util/homefi";
-import { useContractLoader } from "eth-hooks";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -22,7 +21,7 @@ const { Step } = Steps;
 
 const LAST_STEP = 3;
 
-const testAddress = createFullAddress();
+const testAddress = "98 Green Hill Ave. Muskegon, MI 49441"; // createFullAddress();
 
 const UPLOAD_FILES = false;
 
@@ -44,7 +43,7 @@ function ListProperty({ readContracts, isLoggedIn, signer, provider, address, bl
 
   const [files, setFiles] = useState([]);
   const [info, setInfo] = useState({
-    title: testAddress.split(",")[0],
+    title: testAddress,
     description: `${testAddress}. Own 1% of this property`,
     percent: 10,
     limit: 10,
@@ -177,8 +176,8 @@ function ListProperty({ readContracts, isLoggedIn, signer, provider, address, bl
           <div className="info-section">
             <h2 className="sell-header">What are you listing?</h2>
             <Input
-              addonBefore={"Property(s)"}
-              placeholder="Enter name of listing"
+              addonBefore={"Property Address"}
+              placeholder="Enter full address of property: street, city, state"
               value={info.title}
               onChange={e => updateInfo({ title: e.target.value })}
             />

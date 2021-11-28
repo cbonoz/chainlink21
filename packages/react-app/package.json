@@ -44,6 +44,8 @@
     "bnc-notify": "^1.5.0",
     "dids": "^2.4.2",
     "dotenv": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eth-hooks": "2.3.8",
     "ethers": "^5.4.1",
     "faker": "^5.5.3",
