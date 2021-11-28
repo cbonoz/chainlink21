@@ -1,29 +1,26 @@
 <p align='center'>
-    <img src="./img/logo.png" width=400/>
+    <img src="./img/logo_3_2.png" />
 </p>
+<br/>
 
-## HomeChain
+## HomeFi
 
-Find, create, and sell NFT's around your owned real estate.
+Tap into the equity of your home using chainlink and NFT's.
 
 ### What it does
 
-HomeChain enables users to create either own NFT's around properties they own:
+HomeFi enables users to fundraise using NFT's around properties they own.
 
-Users can create the terms of the NFT and allow others to deposit to it.
-Proof of ownership,such as a title or deed, is uploaded on HomeChain. It then collects the user's signature and uploads it as an image file to the IPFS folder for the property.
+Users can create the terms of the NFT and allow others to deposit to it. Proof of ownership,such as a title or deed, is uploaded on HomeFi during the listing process. The app then collects the user's signature and uploads it as an image file to the IPFS folder for the property.
 After upload, prospective buyers/participants (up to the limit specified by the issuer) can discover previously-created listings and purchase units of ownership using attachment to the NFT metadata source of truth.
 
-- Property NFTs can either be ownership-oriented or collectible (i.e. collectible commonly in the case of a celebrity or notable location).
-- HomeChain's signature model could be extended to support arbitrary documents where a signature is tied to an esigned document on IPFS in the future.
-
-Each property gets deployed as its own smart contract. With the price/appraised value of the property fixed to the contract (uses a Chainlink-enabled SmartZip API call).
+Each property gets deployed as its own smart contract. With the price/appraised value of the property fixed to the contract.
 
 <p><b>Note this app is a prototype and would need additional work to be production ready.</b></p>
 
 ### Requirements
 
-HomeChain has the following environment variables for interfacing with core blockchain services:
+HomeFi has the following environment variables for interfacing with core blockchain services:
 
 <pre>
     REACT_APP_NFT_PORT_KEY=XXX # your nftport.xyz api key
@@ -52,12 +49,9 @@ By default, the app is configured for blockchain interactions against the `rinke
 Tap into the equity of your home.
 -->
 
-### Related links
-
-https://www.forbes.com/sites/nataliakarayaneva/2021/04/08/nfts-work-for-digital-art-they-also-work-perfectly-for-real-estate/?sh=775f435e43f3
-
 ### Screenshots
 
+<!--
 #### Home page
 
 <img src="./img/home.png" width=800/>
@@ -97,6 +91,8 @@ https://www.forbes.com/sites/nataliakarayaneva/2021/04/08/nfts-work-for-digital-
 #### Submit payment via unlock to participate in a listed NFT sale
 
 <img src="./img/unlock.png" width=800/>
+
+-->
 
 <!--
 
@@ -146,4 +142,3 @@ Create a limited partnership (LP), issue a token on whatever blockchain you want
 
 - https://chainlink-fall-hackathon-2021.devpost.com/ --
 
-### Dev Notes
