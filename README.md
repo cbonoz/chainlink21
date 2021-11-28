@@ -7,6 +7,12 @@
 
 Tap into the equity of your home using chainlink and NFT's.
 
+<!--
+### Motivation
+
+
+-->
+
 ### What it does
 
 HomeFi enables users to fundraise using NFT's around properties they own.
@@ -32,10 +38,10 @@ HomeFi has the following environment variables for interfacing with core blockch
 
 Sponsors:
 Chainlink: Each listed property is deployed as it's own distinct smart contract. The smart contract maintains the owner and listing terms, as well as all the payers.
-Ceramic: Distributed mutable data storage for the marketplace metadata. Search support.
-IPFS / Filecoin: Store associated files, signature, and proof of ownership (ex: deed/title).
+Moralis: Distributed mutable data storage for the marketplace metadata. Search support.
+IPFS / Filecoin: Store property files, any signatures, and proof of ownership (ex: deed/title documents).
 NFTPort: NFT issuance for the issued real estate backed NFT (minting).
-Alchemy
+Alchemy: Maintains app high availability and serves app requests for the demo (could be updated to serve a production deployment).
 
 ### Running the app
 
@@ -51,15 +57,20 @@ Tap into the equity of your home.
 
 ### Screenshots
 
-<!--
 #### Home page
-
 <img src="./img/home.png" width=800/>
 
 #### Creating a new listing
-
 <img src="./img/info.png" width=800/>
 
+#### Alchemy app serves chain requests
+<img src="./img/alchemy.png" width=800/>
+
+#### Moralis DB backs up all uploaded listings
+<img src="./img/moralis.png" width=800/>
+
+
+<!--
 #### Signature and proof of ownership document required for listing
 
 <img src="./img/sign.png" width=800/>
