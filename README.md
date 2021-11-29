@@ -36,7 +36,7 @@ Moralis: Distributed mutable data storage for the marketplace metadata. Each con
 IPFS / Filecoin: Store property files, any signatures, and proof of ownership (ex: deed/title documents).
 NFTPort: NFT issuance for the issued real estate backed NFT (minting).
 Alchemy: Maintains app high availability and serves app requests for the demo (could be updated to serve a production deployment).
-SmartZip: At or near the time of deployment, the property could be appraised.
+SmartZip: At or near the time of deployment, the property could be appraised. The smartzip oracle is integrated into the smart contract and can be (optionally) invoked to set the smartZipEstimate on the contract itself to track the property's value.
 
 ### Running the app
 
