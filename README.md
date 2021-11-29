@@ -7,6 +7,8 @@
 
 Tap into the equity of your home using Chainlink, IPFS, and NFT's.
 
+Built for the chainlink 2021 fall hackathon.
+
 ### What it does
 
 HomeFi uses Chainlink and a combination of web3 services to administer and deploy smart contracts that represent home equity lines of credit.
