@@ -37,11 +37,12 @@ HomeFi has the following environment variables for interfacing with core blockch
 </pre>
 
 Sponsors:
-Chainlink: Each listed property is deployed as it's own distinct smart contract. The smart contract maintains the owner and listing terms, as well as all the payers.
-Moralis: Distributed mutable data storage for the marketplace metadata. Search support.
+Chainlink: Each listed property is deployed as it's own distinct smart contract. The smart contract maintains the owner and listing terms, as well as all the payers. A chainlink API call is made to fetch information ( appraise value, lat/lng location) dynamically about the property and save it to each contract.
+Moralis: Distributed mutable data storage for the marketplace metadata. Each contract / deployment is saved to a Moralis location. Moralis also facilitates app authentication.
 IPFS / Filecoin: Store property files, any signatures, and proof of ownership (ex: deed/title documents).
 NFTPort: NFT issuance for the issued real estate backed NFT (minting).
 Alchemy: Maintains app high availability and serves app requests for the demo (could be updated to serve a production deployment).
+SmartZip: At or near time of deployment, the property could be appraised.
 
 ### Running the app
 
