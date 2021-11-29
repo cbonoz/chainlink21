@@ -5,20 +5,14 @@
 
 ## HomeFi
 
-Tap into the equity of your home using chainlink and NFT's.
-
-<!--
-### Motivation
-
-
--->
+Tap into the equity of your home using Chainlink and NFT's.
 
 ### What it does
 
 HomeFi enables users to fundraise using NFT's around properties they own.
 
 Users can create the terms of the NFT and allow others to deposit to it. Proof of ownership, such as a title or deed, is uploaded on HomeFi during the listing process. The app then collects the user's signature and uploads it as an image file to the IPFS folder for the property.
-After upload, prospective buyers/participants (up to the limit specified by the issuer) can discover previously-created listings and purchase units of ownership using attachment to the NFT metadata source of truth.
+After upload, prospective buyers/participants (up to the limit specified by the issuer) can discover previously-created listings and purchase units of ownership using attachments to the NFT metadata source of truth.
 
 Each property gets deployed as its own smart contract. With the price/appraised value of the property fixed to the contract.
 
@@ -37,12 +31,12 @@ HomeFi has the following environment variables for interfacing with core blockch
 </pre>
 
 Sponsors:
-Chainlink: Each listed property is deployed as it's own distinct smart contract. The smart contract maintains the owner and listing terms, as well as all the payers. A chainlink API call is made to fetch information ( appraise value, lat/lng location) dynamically about the property and save it to each contract.
-Moralis: Distributed mutable data storage for the marketplace metadata. Each contract / deployment is saved to a Moralis location. Moralis also facilitates app authentication.
+Chainlink: Each listed property is deployed as its own distinct smart contract. The smart contract maintains the owner and listing terms, as well as all the payers. A chainlink API call is made to fetch information ( appraise value, lat/lng location) dynamically about the property and save it to each contract.
+Moralis: Distributed mutable data storage for the marketplace metadata. Each contract/deployment is saved to a Moralis location. Moralis also facilitates app authentication.
 IPFS / Filecoin: Store property files, any signatures, and proof of ownership (ex: deed/title documents).
 NFTPort: NFT issuance for the issued real estate backed NFT (minting).
 Alchemy: Maintains app high availability and serves app requests for the demo (could be updated to serve a production deployment).
-SmartZip: At or near time of deployment, the property could be appraised.
+SmartZip: At or near the time of deployment, the property could be appraised.
 
 ### Running the app
 
