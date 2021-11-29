@@ -23,7 +23,7 @@ const LAST_STEP = 3;
 
 const testAddress = "98 Green Hill Ave. Muskegon, MI 49441"; // createFullAddress();
 
-const UPLOAD_FILES = false;
+const UPLOAD_FILES = true;
 
 function ListProperty({ readContracts, isLoggedIn, signer, provider, address, blockExplorer }) {
   const [currentStep, setCurrentStep] = useState(0);
@@ -91,14 +91,10 @@ function ListProperty({ readContracts, isLoggedIn, signer, provider, address, bl
       let d = { ...info };
 
       if (UPLOAD_FILES) {
+        let nftData;
         try {
-          const { data: nftData } = await createNftFromFileData(
-            info.title,
-            info.description,
-            files[0],
-            address,
-            "rinkeby",
-          );
+          const { data } = await createNftFromFileData(info.title, info.description, files[0], address, "rinkeby");
+          nftData = data;
         } catch (e) {
           console.error("error creating listing", e);
           alert("Error creating listing: " + e.toString());
@@ -215,7 +211,7 @@ function ListProperty({ readContracts, isLoggedIn, signer, provider, address, bl
                 />
 
                 <Input
-                  addonBefore={"Enter price (Eth)"}
+                  addonBefore={"Enter unit price (Eth)"}
                   placeholder="Enter eth price per participant"
                   value={info.eth}
                   suffix={"ETH"}

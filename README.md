@@ -57,27 +57,21 @@ Tap into the equity of your home.
 
 ### Screenshots
 
-#### Home page
-<img src="./img/home.png" width=800/>
+#### Home page and login
+
+<img src="./img/login.png" width=800/>
 
 #### Creating a new listing
+
 <img src="./img/info.png" width=800/>
 
-#### Alchemy app serves chain requests
-<img src="./img/alchemy.png" width=800/>
-
-#### Moralis DB backs up all uploaded listings
-<img src="./img/moralis.png" width=800/>
-
-
-<!--
-#### Signature and proof of ownership document required for listing
+#### Signature is collected from the uploader
 
 <img src="./img/sign.png" width=800/>
 
 #### Completed upload
 
-<img src="./img/complete.png" width=800/>
+<img src="./img/done.png" width=800/>
 
 #### Uploaded IPFS content (deed and signature)
 
@@ -91,17 +85,21 @@ Tap into the equity of your home.
 
 <img src="./img/search.png" width=800/>
 
-#### Property details page
+#### Alchemy app serves chain requests
 
-<img src="./img/details.png" width=800/>
+<img src="./img/alchemy.png" width=800/>
 
-#### Owner history of a property
+#### Moralis DB backs up all uploaded listings
 
-<img src="./img/history.png" width=800/>
+<img src="./img/moralis.png" width=800/>
 
-#### Submit payment via unlock to participate in a listed NFT sale
+#### Chainlink does lookup of property value and confirms location
 
-<img src="./img/unlock.png" width=800/>
+<img src="./img/remix.png" width=800/>
+
+#### SmartZip invocable contract method
+
+<img src="./img/smartzip.png" width=800/>
 
 -->
 
