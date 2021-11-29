@@ -7,7 +7,7 @@
 
 Tap into the equity of your home using Chainlink, IPFS, and NFT's.
 
-Built for the chainlink 2021 fall hackathon.
+Built for the Chainlink 2021 Fall hackathon.
 
 ### What it does
 
